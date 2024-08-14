@@ -2,8 +2,8 @@
 <html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=divi, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio de Otavio Caetano Ribeiro</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -11,27 +11,94 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="" class="logo">
+                <img src="path/to/logo.png" class="logo" alt="Logo">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Services</a></li>
-                    <li><a href="#">Portifolio</a></li>
+                    <li><a href="#">Portfólio</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-text">
                 <p>Desenvolvedor FULL-STACK</p>
-                <h1><span>Olá</span>, meu nome <br><span>Otavio Caetano Ribeiro</span> <br>Bem vindo ao meu <span>Portifolio</span></h1>
+                <h1><span>Olá</span>, meu nome <br><span>Otavio Caetano Ribeiro</span> <br>Bem-vindo ao meu <span>Portfólio</span></h1>
             </div>
         </div>
     </div>
+    
     <div id="about">
         <div class="container">
             <div class="row">
-                
+                <div class="about-col-1">
+                    <img src="/img/foto minha.png" alt="Foto de Otavio Caetano Ribeiro">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title" style="color: #e59800;">Sobre mim</h1>
+                    <p>Meu nome é Otavio Caetano Ribeiro, sou estudante de Engenharia de Software e nasci em Curitiba. Aos 10 anos, me mudei para Mato Grosso, onde vivi por 8 anos antes de retornar a Curitiba. Ao chegar aqui, comecei meu serviço militar, onde me qualifiquei como socorrista na área da saúde. Após o término do serviço militar, me senti um pouco perdido, sem saber ao certo qual carreira seguir.
+                        <br><br> Seguindo as sugestões de parentes e amigos, decidi me direcionar para a área de tecnologia. Foi então que descobri minha paixão pelo desenvolvimento de software. Desde então, tenho me dedicado a me aprofundar nesse campo e busco, a todo custo, me desenvolver profissionalmente. Estou comprometido em crescer e explorar todas as oportunidades que surgem para aprimorar minhas habilidades e conhecimentos na área de desenvolvimento de software. <br><br>
+                        Sou uma pessoa amigável e gosto de fazer novas amizades e participar de discussões de forma saudável, onde todos possam se envolver e contribuir. Além disso, sou apaixonado por esportes, incluindo futebol e basquete, e também me divirto com esportes eletrônicos, como CS , Valorant, entre outros.</p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experiencia')">Experiência</p>
+                        <p class="tab-links" onclick="opentab('education')">Educação</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Desenvolvedor Full-stack</span><br></li>
+                            <li><span>Java</span><br><p>POO | SpringBoot</p></li>
+                            <li><span>JavaScript</span><br><p>NodeJs | TypeScript | Angular</p></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experiencia">
+                        <ul>
+                            <li><span>Vendedor em Auto Peças</span><br>
+                                <p>Trabalhei por 3 anos onde desenvolvi rápida resolução de problemas a partir de análise crítica e racional, 
+                                comunicação e trabalho em equipe, além de empatia com terceiros no trabalho.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>Ensino Médio</span><br>
+                                <p>Completado através do ENCCEJA supletivo em 2022. Meu ensino médio foi interrompido no 2º ano 
+                                devido ao serviço militar.</p>
+                            </li>
+                            <li><span>Serviço Militar</span><br>
+                                <p>Completei o serviço militar com honra ao mérito por boa conduta durante os serviços prestados, 
+                                incluindo formação em primeiros socorros e resgate em combate.</p>
+                                <img src="/img/sutache.png" alt="Soutache da Saúde" style="width: 100px; margin-top: 10px;">
+                            </li>
+                            <li>
+                            <span>Cursos de Java - Gustavo Guanabara</span><br>
+                            <p>
+                            - <strong>Java Básico:</strong> Curso com 40 horas de aulas.<br>
+                            - <strong>Java POO:</strong> Curso focado em Programação Orientada a Objetos.
+                            </p>
+                        </li>
+                        </ul>
+                    </div>
+                    
+                </div>
             </div>
         </div>
     </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname) {
+            for (tablink of tablinks) {
+                tablink.classList.remove("active-link");
+            }
+            for (tabcontent of tabcontents) {
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+        
+    </script>
 </body>
 </html>
